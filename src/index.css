@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: #09090b; /* Near Black */
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Glassmorphism for light background sections */
+.glass-panel-light {
+  background: rgba(250, 250, 250, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-panel-light:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Noise overlay texture */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+}
+
+/* Ambient glow background grids */
+.ambient-glow-blue {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0) 70%);
+}
+
+.ambient-glow-red {
+  background: radial-gradient(circle at center, rgba(220, 38, 38, 0.12) 0%, rgba(220, 38, 38, 0) 70%);
+}
+
+.ambient-glow-green {
+  background: radial-gradient(circle at center, rgba(22, 163, 74, 0.1) 0%, rgba(22, 163, 74, 0) 70%);
+}
+
+/* Grid overlay background */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-grid-light {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+}
+
+/* Custom clip-pulse for radar sweep */
+.clip-pulse {
+  clip-path: ellipse(60% 60% at 50% 50%);
+}
+
+/* Text glow */
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+/* Interactive card transitions */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+}
+
+/* Organic float animation for orbit nodes */
+@keyframes float-node {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-node {
+  animation: float-node 4s ease-in-out infinite;
+}
+
+/* Timeline drawing line animation */
+@keyframes draw-line {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-timeline-line {
+  animation: draw-line 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Infinite horizontal marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+

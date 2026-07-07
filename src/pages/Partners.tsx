@@ -48,11 +48,6 @@ export const Partners: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           
-          <ScrollReveal direction="up" className="mb-8 text-center max-w-xl">
-            <h2 className="text-xl font-bold text-white mb-2">Interactive Ecosystem Orbit</h2>
-            <p className="text-sm text-gray-400 font-semibold">Hover to pause, click on any partner logo floating in the concentric orbit to view their integration role details.</p>
-          </ScrollReveal>
-
           {/* Interactive Concentric Orbit Ring Box */}
           <div 
             className="relative w-full max-w-[650px] h-[450px] sm:h-[500px] md:h-[550px] flex items-center justify-center mb-12 scale-[0.65] min-[400px]:scale-[0.75] sm:scale-90 md:scale-100 origin-center transition-all duration-300"
